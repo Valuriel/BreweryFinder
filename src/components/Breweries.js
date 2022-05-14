@@ -4,6 +4,7 @@ import axios from 'axios';
 import BreweryCard from './BreweryCard';
 import Search from './Search';
 
+// Material UI imports
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 
@@ -11,6 +12,7 @@ const Breweries = () => {
     const [searchBrewery, setSearchBrewery] = useState('');
     const [breweries, setBreweries] = useState([]);
 
+// fetch all breweries from the OpenBreweryDB Api
 useEffect(() => {
     fetchBreweries();
 }, []);
@@ -31,6 +33,7 @@ const searchHandler = (value) => {
     setSearchBrewery(value);
 }
 
+// filter logic to only show breweries that includes the city or name of the brewery based on userinput
 const filteredBreweries = searchBrewery.length === 0 ? breweries :
         breweries.filter(brewery => brewery.id
         .toLowerCase().includes(searchBrewery.toLocaleLowerCase()) || 
@@ -40,7 +43,7 @@ const filteredBreweries = searchBrewery.length === 0 ? breweries :
     return (
         <Container>
             <Search searchHandler={searchHandler} />
-            <h1>Breweries</h1>
+            
             <Grid container spacing={3}>
                 {filteredBreweries.map((brewery) =>(
                 <Grid item key={brewery.id} xs={12} sm={6} md={3}>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// Material UI imports
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
@@ -12,7 +13,17 @@ import Button from '@mui/material/Button';
 const BreweryCard = ({ brewery }) => {
   return (
     <div>
-      <Card elevation={1}>
+      <Card 
+          variant='outlined' 
+          style={{ 
+            minWidth: '250px', 
+            height: '300px', 
+            marginBottom: '25px', 
+            backgroundColor: '#f9f9f9', 
+            display: 'flex', 
+            justifyContent: 'space-between', 
+            flexDirection: 'column' }}
+        >
         <CardHeader 
           title={brewery.name}
         />
@@ -25,7 +36,7 @@ const BreweryCard = ({ brewery }) => {
           </Typography>
         </CardContent>
         <CardActions>
-        <Link to={`/breweryDetails/${brewery.id}`}><Button size='small' variant='contained' color='primary'>View Details</Button></Link>
+        <Link to={`/breweryDetails/${brewery.id}`} style={{textDecoration: 'none'}}><Button size='small' variant='contained' color='warning'>View Details</Button></Link>
         </CardActions>
       </Card>
     </div>

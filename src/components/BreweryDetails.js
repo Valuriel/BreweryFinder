@@ -2,6 +2,7 @@ import React, { useState, useEffect  } from 'react';
 import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
 
+// Material UI imports
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -14,6 +15,7 @@ const BreweryDetails = () => {
     const { id } = useParams();
     const [breweryDetail, setDetail] = useState({});
 
+    // fetch the specific brewery clicked by the user
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -33,10 +35,10 @@ const BreweryDetails = () => {
             justify='center'
             direction='column'
             alignItems='center'
-            style={{ minHeight: '100vh' }}
+            style={{ minHeight: '100vh', justifyContent: 'center' }}
             
             >
-            <Card elevation={1}>
+            <Card elevation={1} style={{ minWidth: '250px', height: '500px'}}>
                 <CardHeader color='primary'
                 title={breweryDetail.name}
                 />
@@ -67,7 +69,7 @@ const BreweryDetails = () => {
                 </Typography>
                 </CardContent>
                 <CardActions>
-                <Link to={`/`}><Button size='small' variant='contained' color='primary'>Go Back</Button></Link>
+                <Link to={`/`} style={{textDecoration: 'none'}}><Button size='small' variant='contained' color='warning' >Go Back</Button></Link>
                 </CardActions>
             </Card>
         </Grid>   
