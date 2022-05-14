@@ -11,6 +11,6 @@ This application uses ReactJS and Material UI for styling the components.
 
 
 ## Preview
-
+![](https://github.com/Valuriel/BreweryFinder/blob/master/preview.gif)
 
 
