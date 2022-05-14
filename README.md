@@ -11,4 +11,5 @@ This application uses ReactJS and Material UI for styling the components.
 
 
 ## Preview
-<iframe src='https://gfycat.com/ifr/UnhappyEqualBrant' frameborder='0' scrolling='no' allowfullscreen width='640' height='406'></iframe>
+![](<iframe src='https://gfycat.com/ifr/UnhappyEqualBrant' frameborder='0' scrolling='no' allowfullscreen width='640' height='406'></iframe>)
+
